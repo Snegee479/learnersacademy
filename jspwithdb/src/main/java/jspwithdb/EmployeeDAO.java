@@ -56,10 +56,13 @@ public class EmployeeDAO {
 		
 	}
 	public EmployeePOJO getRecordById(int eid) throws ClassNotFoundException, SQLException  { 
+		System.out.println("Entering in to Method");
 		Connection con=EmployeeDbConn.getConn();
+		System.out.println("Entering in to Method"+con);
 		PreparedStatement ps=con.prepareStatement("select * from employee where empid=?");  
 	    ps.setInt(1,eid);  
-	    ResultSet rs=ps.executeQuery(); 
+	    ResultSet rs=ps.executeQuery();
+	    System.out.println(rs);
 		EmployeePOJO emp=new EmployeePOJO();
 		while(rs.next()) {
 			emp.setEmpno(rs.getInt(1));

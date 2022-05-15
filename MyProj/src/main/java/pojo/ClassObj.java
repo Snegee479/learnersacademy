@@ -1,13 +1,17 @@
 package pojo;
 
-public class ClassPOJO {
-	private	int classId;
-	private	String className;
-	public ClassPOJO(String className) {
+public class ClassObj {
+	protected int classId;
+	protected String className;
+	public ClassObj() {
+	}
+	public ClassObj(int classId, String className) {
+		super();
+		this.classId = classId;
 		this.className = className;
 	}
-	public ClassPOJO(int classId, String className) {
-		this.classId = classId;
+	public ClassObj(String className) {
+		super();
 		this.className = className;
 	}
 	public int getClassId() {
@@ -22,4 +26,5 @@ public class ClassPOJO {
 	public void setClassName(String className) {
 		this.className = className;
 	}
+
 }

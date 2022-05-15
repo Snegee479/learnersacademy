@@ -1,9 +1,8 @@
-<%@page import="jspwithdb.EmployeeDAO"%>
-<%@page import="jspwithdb.EmployeePOJO"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@page import="java.util.*" %>
 <%@page import="java.io.*" %>
+<%@page import="jspwithdb.*"%>
   
 <!DOCTYPE html>
 <html>
@@ -16,9 +15,16 @@
 EmployeeDAO dao=new EmployeeDAO();
 int eid=Integer.parseInt(request.getParameter("id"));	
 PrintWriter pw=response.getWriter();
-EmployeePOJO e=dao.getRecordById(eid);
+EmployeePOJO e = new EmployeePOJO();
+try {
+e=dao.getRecordById(eid);
 pw.println(eid+" from request");
 pw.println(e.getEmpno());
+} 
+catch (Exception e1)
+{
+	e1.printStackTrace();
+}
 
 %>
 <h1>Update form</h1>  

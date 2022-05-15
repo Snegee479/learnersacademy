@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+ 
+ <servlet>
+ <servlet-name>listClass</servlet-name>
+ <servlet-class>servlet.ClassServlet</servlet-class>
+ </servlet>
+ 
+ <servlet-mapping>
+ <servlet-name>insertClass</servlet-name>
+ <url-pattern>/list</url-pattern>
+ <url-pattern>/listClass</url-pattern>
+ <url-pattern>/listStudent</url-pattern>
+ <url-pattern>/listTeacher</url-pattern>
+ </servlet-mapping>
+ 
+ 
+ <display-name>JSPClass</display-name>
+ <welcome-file-list>
+  <welcome-file>/class-list.jsp</welcome-file>
+  <welcome-file>/student-list.jsp</welcome-file>
+  <welcome-file>/student-form.jsp</welcome-file>
+  <welcome-file>/teacher-form.jsp</welcome-file>
+  <welcome-file>/class-form.jsp</welcome-file>
+  <welcome-file>/teacher-list.jsp</welcome-file>
+ </welcome-file-list>
+</web-app>
